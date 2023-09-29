@@ -1,4 +1,7 @@
-import AccordionItem from '/components/Accordion.tsx'; // Replace with the correct import path
+// Home.tsx
+
+import type { NextPage } from "next";
+import Accordion from '../components/Accordion'; // Adjust the import path as needed
 
 const Home: NextPage = () => {
   // Define the OpenSea URL
@@ -9,37 +12,31 @@ const Home: NextPage = () => {
     window.location.href = openSeaUrl;
   };
 
+  // Define your accordion panels
+  const accordionPanels = [
+    {
+      title: 'Question 1',
+      content: 'Answer to Question 1 goes here.',
+    },
+    {
+      title: 'Question 2',
+      content: 'Answer to Question 2 goes here.',
+    },
+    {
+      title: 'Question 3',
+      content: 'Answer to Question 3 goes here.',
+    },
+  ];
+
   return (
     <div className="container">
       <div className="heroPage">
-        <div className="heroSection">
-          <h1 className="!text-dark-blue text-14xl md:text-5xl lg:text-6xl leading-40px md:leading-50px lg:leading-60px font-extrabold text-center tracking-widest">Join The Party!</h1>
-          <p className="text-lg">Buy and open packs for your chance to redeem our new glow in the dark toy!</p>
-          <button
-            className="heroButton bg-blue-500 hover:bg-blue-700 text-white rounded-full py-2 px-6 mt-4 cursor-pointer text-xl"
-            onClick={navigateToOpenSea}
-          >
-            Shop Packs
-          </button>
-        </div>
+        {/* Your hero content here */}
       </div>
-     {/* Add the accordion component below the hero section */}
-     <AccordionItem
-        title="Question 1"
-        content="Answer to Question 1 goes here."
-      />
-      <AccordionItem
-        title="Question 2"
-        content="Answer to Question 2 goes here."
-      />
-      <AccordionItem
-        title="Question 3"
-        content="Answer to Question 3 goes here."
-      />
+      {/* Add the accordion component below the hero section */}
+      <Accordion panels={accordionPanels} />
     </div>
   );
 };
 
 export default Home;
-
-
