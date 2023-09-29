@@ -1,45 +1,26 @@
-// Accordion.tsx
-
 import React, { useState } from 'react';
 
-interface PanelProps {
+interface AccordionProps {
   title: string;
   content: string;
 }
 
-const Panel: React.FC<PanelProps> = ({ title, content }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="panel" role="tabpanel">
-      <button
-        className="panel__label"
-        role="tab"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {title}
-      </button>
-      <div
-        className="panel__inner"
-        style={{ height: isOpen ? 'auto' : 0 }}
-        aria-hidden={!isOpen}
-      >
-        <p className="panel__content">{content}</p>
+    <div className={`accordion ${isOpen ? 'open' : ''}`}>
+      <div className="accordion-header" onClick={toggleAccordion}>
+        <h3>{title}</h3>
+        <span className={`icon ${isOpen ? 'open' : ''}`}>&#x25BC;</span>
       </div>
-    </div>
-  );
-};
-
-interface AccordionProps {
-  panels: PanelProps[];
-}
-
-const Accordion: React.FC<AccordionProps> = ({ panels }) => {
-  return (
-    <div className="accordion" role="tablist">
-      {panels.map((panel, index) => (
-        <Panel key={index} title={panel.title} content={panel.content} />
-      ))}
+      <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
+        <p>{content}</p>
+      </div>
     </div>
   );
 };

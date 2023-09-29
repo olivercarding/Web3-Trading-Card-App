@@ -8,7 +8,8 @@
 /* Your other global styles here */
 
 .container {
-  padding: 0 2rem;
+  padding: 0rem;
+  width:100%;
 }
 
 .main {
@@ -99,8 +100,8 @@
   line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
+.Home_logo__27_tb {
+  height: 4em;
   margin-left: 0.5rem;
 }
 
@@ -123,7 +124,7 @@
 }
 
 .Home_navbar__H7ooC {
-  width: 110% !important;
+  width: 100vw !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,7 +257,7 @@
 }
 
 .heroPage {
-  width: 100%;
+  width: 100vw !important;
   background-image: url("https://cryptokaiju.io/wp-content/uploads/2023/09/Kaiju-Party-Banner.png?width=1151&height=685");
   background-size: cover;
   background-repeat: no-repeat;
@@ -270,7 +271,9 @@
   color: white;
 }
 
+
 .heroSection {
+  width:100%;
   background: rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 40px;
@@ -281,6 +284,7 @@
 /* Adjust the font size and font family below */
 .heroSection h1 {
   font-size: 3.2rem; /* Adjust the font size as needed */
+  font-weight: bold;
   font-family: "Opensans", sans-serif; /* Replace with your desired font family */
   margin-bottom: 10px;
 }
@@ -304,4 +308,71 @@
 /* Change button color on hover */
 .heroButton:hover {
   background-color: #0c88c7; /* Change the background color on hover to your preferred color */
+}
+body {
+  overflow-x: hidden;
+}
+.FAQs {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0; /* Adjust padding as needed */
+  background-color: #0c88c7;
+  display: flex;
+  flex-direction: column; /* Ensure vertical alignment */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.faqTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1rem; /* Adjust margin as needed */
+}
+.accordion {
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  width: 70%; /* Adjust the width as needed */
+  border-radius: 10px; /* Add rounded corners */
+  font-family: "Open Sans", sans-serif;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0; /* Rounded corners for the top */
+  font-weight:600;
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.open .icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 10px 10px; /* Rounded corners for the bottom */
+}
+
+.open .accordion-content {
+  display: block;
+}
+
+.Home_container__bCOhY {
+  padding: 0 0rem;
 }

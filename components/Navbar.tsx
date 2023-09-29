@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className={styles.navbar}>
                 <Link href="/">
                     {/* Replace text with a logo */}
-                    <img src="/your-logo-image.png" alt="Logo" className={styles.logo} />
+                    <img src="https://cryptokaiju.io/wp-content/uploads/2018/11/logo-x80.png" alt="Logo" className={styles.logo} />
                 </Link>
                 <div className={styles.navLinks}>
                     {/* Remove the link to /shop */}
