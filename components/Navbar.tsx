@@ -18,14 +18,19 @@ export default function Navbar() {
         <div className={styles.container}>
             <div className={styles.navbar}>
                 <Link href="/">
-                    <p>Creatures</p>
+                    {/* Replace text with a logo */}
+                    <img src="/your-logo-image.png" alt="Logo" className={styles.logo} />
                 </Link>
                 <div className={styles.navLinks}>
-                    <Link href="/shop">
-                        <p>Shop</p>
+                    {/* Remove the link to /shop */}
+                    {/* Remove the link to /marketplace */}
+                    <Link href="/myPacks">
+                        {/* Change the text and link */}
+                        <p>Your Packs</p>
                     </Link>
-                    <Link href="/marketplace">
-                        <p>Marketplace</p>
+                    <Link href="/myCards">
+                        {/* Change the text and link */}
+                        <p>Your Cards</p>
                     </Link>
                 </div>
                 <div>
@@ -46,10 +51,10 @@ export default function Navbar() {
                 {isProfileDropdownOpen && (
                     <div className={styles.profileDropdown}>
                         <Link href="/myPacks">
-                            <p>My Packs</p>
+                            <p>Your Packs</p>
                         </Link>
                         <Link href="/myCards">
-                            <p>My Cards</p>
+                            <p>Your Cards</p>
                         </Link>
                         <button
                             onClick={disconnectWallet}
