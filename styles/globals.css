@@ -313,7 +313,7 @@ body {
   overflow-x: hidden;
 }
 .FAQs {
-  width: 100%;
+  width: 100vw !important;
   text-align: center;
   padding: 2rem 0; /* Adjust padding as needed */
   background-color: #0c88c7;

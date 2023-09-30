@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import Navbar from "../components/Navbar";
+import Head from 'next/head'; // Import the Head component
 import "../styles/globals.css"; // Import the global CSS here
 
 // This is the chain your dApp will work on.
@@ -11,6 +12,11 @@ const activeChain = "polygon";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider activeChain={activeChain}>
+      <Head>
+        {/* Add the viewport meta tag here */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Add other meta tags or head elements as needed */}
+      </Head>
       <Navbar />
       <Component {...pageProps} />
     </ThirdwebProvider>
