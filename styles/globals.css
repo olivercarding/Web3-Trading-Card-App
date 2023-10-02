@@ -100,7 +100,7 @@
   line-height: 1.5;
 }
 
-.Home_logo__27_tb {
+.logo {
   height: 4em;
   margin-left: 0.5rem;
 }
@@ -122,29 +122,34 @@
 .logo img {
   filter: invert(1);
 }
-
-.Home_navbar__H7ooC {
-  width: 100vw !important;
+.navbar {
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  color: #fff !important; /* Background color for the navigation */
-  align-items: center; /* Vertically center the links */
-  background-color: #1f2760 !important; /* Background color for the navigation */
+  background-color: #1f2760;
   font-family: "OpenSans", sans-serif !important; /* Use the OpenSans font */
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-transform: uppercase; /* Convert link text to uppercase */
 }
-.Home_navLinks__T7Oc4 a {
-  color: #fff; /* Text color */
-  margin: 0 20px; /* Add margin for spacing between links */
+.navbar .navlinks {
+  display: flex;
+  flex-direction: row; /* Change to row to make links horizontal */
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.navbar .navlinks a {
+  color: #fff !important;
+  margin: 0 20px;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease; /* Smooth transition for link color */
+  transition: color 0.3s ease;
 }
-.Home_navLinks__T7Oc4 a a:hover {
-  color: #111; /* Text color on hover */
+
+.navbar .navLinks a:hover {
+  color: #111;
 }
 .avatar {
   width: 42px;
@@ -169,7 +174,6 @@
   padding: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
-
 .packCard {
   width: 98%;
   margin: 0.5%;
@@ -258,12 +262,12 @@
 
 .heroPage {
   width: 100vw !important;
-  background-image: url("https://cryptokaiju.io/wp-content/uploads/2023/09/Kaiju-Party-Banner.png?width=1151&height=685");
+  background-image: url("https://cryptokaiju.io/wp-content/uploads/2023/10/Banner-Test-1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 75vh;
-  border-radius: 20px;
+  border-radius: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,4 +379,73 @@ body {
 
 .Home_container__bCOhY {
   padding: 0 0rem;
+}
+.profiledropdown a {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  text-decoration: none; /* Remove underlines from links if needed */
+}
+
+/* Style for visited links (if needed) */
+.profiledropdown a:visited {
+  color: black;
+}
+
+/* Style for hover and active links (if needed) */
+.profiledropdown a:hover,
+.profiledropdown a:active {
+  color: #007bff; /* Change to the desired hover/active color */
+}
+/* Style buttons within .profiledropdown */
+.logoutButton {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+}
+
+/* Style the button on hover */
+.logoutButton:hover {
+  background-color: #0c88c7;
+}
+
+.Other_buyButton__s10bn {
+  background-color: #0ea5e9; /* Change the background color to your preferred color */
+  color: #fff; /* Text color (white in this case) */
+  padding: 10px 20px; /* Adjust padding for height and width */
+  border-radius: 20px; /* Increase border-radius for a more rounded, pill-shaped appearance */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  margin-top: 5px;
+}
+.Otherh1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-family: "Opensans", sans-serif;
+  margin-bottom: 10px;
+}
+.centeredContent {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: "Opensans", sans-serif;
+}
+.Home_saleButton___HCyV {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Add margin to separate the button from card info */
+  width: fit-content; /* Adjust button width to fit its content */
+}
+
+.Home_saleButton___HCyV:hover {
+  background-color: #0c88c7;
 }

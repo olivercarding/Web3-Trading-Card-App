@@ -11,7 +11,7 @@ const activeChain = "polygon";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={activeChain}>
+    <ThirdwebProvider activeChain={activeChain} clientId="0932eccf024b4ddd5be60aefc2b40c1c">
       <Head>
         {/* Add the viewport meta tag here */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

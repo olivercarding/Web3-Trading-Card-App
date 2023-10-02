@@ -1,9 +1,9 @@
-import { ThirdwebNftMedia, Web3Button, useAddress, useContract, useOwnedNFTs } from '@thirdweb-dev/react'
-import styles from '../styles/Home.module.css'
+import { ThirdwebNftMedia, Web3Button, useAddress, useContract, useOwnedNFTs } from '@thirdweb-dev/react';
 import { PACK_ADDRESS } from '../const/addresses';
 import { useState } from 'react';
 import { PackRewards } from '@thirdweb-dev/sdk/dist/declarations/src/evm/schema';
 import { PackRewardCard } from '../components/PackRewardCard';
+import Image from 'next/image';
 
 export default function MyPacks() {
     const address = useAddress();
@@ -11,53 +11,62 @@ export default function MyPacks() {
     const { contract } = useContract(PACK_ADDRESS, "pack");
     const { data, isLoading } = useOwnedNFTs(contract, address);
 
-    const [openPackRewards, setOpenPackRewards] = useState<PackRewards>();
+    const [openPackRewards, setOpenPackRewards] = useState<PackRewards | undefined>();
 
     async function openPack(packId: string) {
         const cardRewards = await contract?.open(parseInt(packId), 1);
         console.log(cardRewards);
         setOpenPackRewards(cardRewards);
     };
-    
-    
+
     return (
-        <div className={styles.container}>
-            <h1>My Packs</h1>
-            <div className={styles.grid}>
-                {!isLoading ? (
-                    data?.map((pack, index) => (
-                        <div key={index} className={styles.nftCard}>
+        <div className="container">
+            <h1 className="Otherh1">Your Packs</h1>
+            <div className="grid">
+                {isLoading ? (
+                    <p>Loading...</p>
+                ) : data && data.length > 0 ? (
+                    data.map((pack, index) => (
+                        <div key={index} className="nftCard">
                             <ThirdwebNftMedia
-                            metadata={pack.metadata}
+                                metadata={pack.metadata}
                             />
-                            <div className={styles.myCardInfo}>
+                            <div className="myCardInfo">
                                 <h3>{pack.metadata.name}</h3>
                                 <p>Qty: {pack.quantityOwned}</p>
                             </div>
                             <Web3Button
                                 contractAddress={PACK_ADDRESS}
                                 action={() => openPack(pack.metadata.id)}
-                                className={styles.saleButton}
-                            >Open Pack</Web3Button>
+                                className="saleButton"
+                            >
+                                Open Pack
+                            </Web3Button>
                         </div>
                     ))
-                    ) : (
-                    <p>Loading...</p>
+                ) : (
+                    <div className="centeredContent">
+                        <p>You don&apos;t currently own any Kaiju Card packs.</p>
+                        <p>Buy one for your chance to redeem our new glow-in-the-dark toy.</p>
+                        <a href="https://opensea.io/collection/cryptokaiju-art-cards-season-1" target="_blank" rel="noopener noreferrer">
+                            <button className="Other_buyButton__s10bn">Buy Kaiju Card Packs</button>
+                        </a>
+                    </div>
                 )}
             </div>
-            {openPackRewards && openPackRewards.erc1155Rewards?.length && (
-                <div className={styles.container}>
+            {openPackRewards?.erc1155Rewards && openPackRewards.erc1155Rewards.length > 0 && (
+                <div className="container">
                     <h3>Pack Rewards:</h3>
-                    <div className={styles.grid}>
+                    <div className="grid">
                         {openPackRewards.erc1155Rewards.map((card, index) => (
-                        <PackRewardCard
-                            reward={card}
-                            key={index}
-                        />
+                            <PackRewardCard
+                                reward={card}
+                                key={index}
+                            />
                         ))}
                     </div>
                 </div>
             )}
         </div>
-    )
+    );
 }

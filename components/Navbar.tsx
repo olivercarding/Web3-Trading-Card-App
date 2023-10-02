@@ -1,7 +1,7 @@
 import { ConnectWallet, useAddress, useDisconnect } from "@thirdweb-dev/react";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function Navbar() {
     const address = useAddress();
@@ -15,13 +15,22 @@ export default function Navbar() {
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.navbar}>
+        <div className="container">
+            <div className="navbar">
                 <Link href="/">
                     {/* Replace text with a logo */}
-                    <img src="https://cryptokaiju.io/wp-content/uploads/2018/11/logo-x80.png" alt="Logo" className={styles.logo} />
+                    <div className="logo-container">
+                        <Image
+                            src="https://cryptokaiju.io/wp-content/uploads/2018/11/logo-x80.png" // Replace with your image path
+                            alt="Logo"
+                            width={374} // Set the width you prefer
+                            height={90} // Set the height you prefer
+                            className="logo"
+                            layout="responsive"
+                        />
+                    </div>
                 </Link>
-                <div className={styles.navLinks}>
+                <div className="navlinks">
                     {/* Remove the link to /shop */}
                     {/* Remove the link to /marketplace */}
                     <Link href="/myPacks">
@@ -38,18 +47,24 @@ export default function Navbar() {
                         <ConnectWallet 
                             btnTitle="Login"
                             theme="light"
-                            className={styles.connectWalletBtn}
+                            className="connectWalletBtn"
                         />
                     ) : (
                         <div
                             onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
                         >
-                            <img src={`https://avatars.dicebear.com/api/avataaars/1.svg`} alt="avatar" className={styles.avatar}/>
+                            <Image
+                                src={`https://cryptokaiju.io/wp-content/uploads/2022/04/About-Icon-5.png`}
+                                alt="avatar"
+                                width={42} // Set the width you prefer
+                                height={42} // Set the height you prefer
+                                className="avatar"
+                            />
                         </div>
                     )}
                 </div>
                 {isProfileDropdownOpen && (
-                    <div className={styles.profileDropdown}>
+                    <div className="profileDropdown">
                         <Link href="/myPacks">
                             <p>Your Packs</p>
                         </Link>
@@ -57,8 +72,11 @@ export default function Navbar() {
                             <p>Your Cards</p>
                         </Link>
                         <button
+                            className="logoutButton"
                             onClick={disconnectWallet}
-                        >Logout</button>
+                        >
+                            Logout
+                        </button>
                     </div>
                 )}
             </div>

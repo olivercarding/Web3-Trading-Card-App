@@ -7,11 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "npm run build:css",
     "build:css": "postcss src/styles/tailwind.css -o public/styles/tailwind.css",
     "watch:css": "postcss src/styles/tailwind.css -o public/styles/tailwind.css --watch",
     "build:tailwind": "NODE_ENV=production postcss src/styles/tailwind.css -o public/styles/tailwind.css"
-  },  
+  },
   "dependencies": {
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
