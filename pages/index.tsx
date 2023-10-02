@@ -1,17 +1,30 @@
 import type { NextPage } from 'next';
-import Accordion from '../components/Accordion'; // Import the Accordion component
+import { useEffect } from 'react'; // Import useEffect
+import Head from 'next/head'; // Import the Head component
+import Accordion from '../components/Accordion';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   // Define the OpenSea URL
-  const openSeaUrl = "https://opensea.io/collection/cryptokaiju-art-cards-season-1";
+  const openSeaUrl = 'https://opensea.io/collection/cryptokaiju-art-cards-season-1';
 
   // Function to handle the button click and navigate to OpenSea
   const navigateToOpenSea = () => {
     window.location.href = openSeaUrl;
   };
 
+  useEffect(() => {
+    // Set the page title dynamically using useEffect
+    document.title = 'Your Page Title Here';
+  }, []);
+
   return (
     <div className="container">
+      {/* Use the Head component to set the title */}
+      <Head>
+        <title>CryptoKaiju Cards - Redeem Your NFT for a Vinyl Toy</title>
+      </Head>
+
       <div className="heroPage">
         <div className="heroSection">
           <h1>JOIN THE PARTY!</h1>

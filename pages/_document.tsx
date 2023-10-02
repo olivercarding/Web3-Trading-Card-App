@@ -7,7 +7,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <Title> CryptoKaiju Cards - Redeemable Vinyl Toys</Title>
+          {/* Add your custom head elements here */}
         </Head>
         <body>
           <Main />
