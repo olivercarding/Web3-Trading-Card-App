@@ -41,6 +41,10 @@ export default function Navbar() {
                         {/* Change the text and link */}
                         <p>Your Cards</p>
                     </Link>
+                    <Link href="https://claim.cryptokaiju.io/">
+                        {/* Change the text and link */}
+                        <p>Redeem</p>
+                    </Link>
                 </div>
                 <div>
                     {!address ? (
